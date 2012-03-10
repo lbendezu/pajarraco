@@ -6,6 +6,8 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'ember-rails'
+gem 'inherited_resources'
 
 
 # Gems used only for assets and not required
