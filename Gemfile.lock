@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/josevalim/active_model_serializers.git
+  revision: 5f0bb6d1481478f8aea2111cc14ea286be0bfc95
+  specs:
+    active_model_serializers (0.1.0)
+      activemodel (~> 3.0)
+
+GIT
   remote: http://github.com/emberjs/ember-rails
   revision: 1614e7dac6dcd83a68b4f5ea479d2fec7094d781
   specs:
@@ -111,6 +118,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   coffee-rails (~> 3.2.1)
   ember-rails!
   jquery-rails
