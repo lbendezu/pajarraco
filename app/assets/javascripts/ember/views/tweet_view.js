@@ -11,6 +11,9 @@ Pajarraco.TweetView = Ember.View.extend({
       tweet.save();
       Pajarraco.searchTweets.removeObject(tweet);
       Pajarraco.savedTweets.insertAt(0, tweet);
+    } else {
+      tweet.delete();
+      Pajarraco.savedTweets.removeObject(tweet);
     }
   }
 });

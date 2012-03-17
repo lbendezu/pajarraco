@@ -12,4 +12,11 @@ class TweetsController < ApplicationController
 
     respond_with @tweet
   end
+
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+
+    respond_with @tweet
+  end
 end

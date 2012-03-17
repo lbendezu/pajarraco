@@ -34,7 +34,18 @@ Pajarraco.Tweet = Ember.Object.extend({
     });
 
     return self;
-  }
+  },
+
+  delete: function () {
+    var id = this.get('id');
+    $.ajax('/tweets/' + id + '.json', {
+      type: 'POST',
+      data: { _method: 'DELETE' },
+      dataType: 'text'
+    });
+
+    return this;
+  } 
 });
 
 Pajarraco.Tweet.all = function () {
