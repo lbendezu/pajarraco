@@ -3,11 +3,13 @@ Pajarraco.TweetView = Ember.View.extend({
   classNames: ['tweet'],
 
   tweet: null,
-  mouseDown: function () {
+
+  doubleClick: function () {
     var tweet = this.get('tweet')
 
     if (!tweet.get('id')) {
-      alert('TODO');
+      Pajarraco.searchTweets.removeObject(tweet);
+      Pajarraco.savedTweets.insertAt(0, tweet);
     }
   }
 });

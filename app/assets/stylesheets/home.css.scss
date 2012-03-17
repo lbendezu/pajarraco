@@ -38,13 +38,16 @@ h1 {
 }
 
 .tweet {
+
+
   .user_info {
-    display: inline-block;
-    margin-left: 5px;
+    margin-left: 60px;
   }
 
   img {
     @include border-radius(5px);
+
+    float: left; 
     height: 48px;
     width: 48px;
   }
