@@ -8,6 +8,7 @@ Pajarraco.TweetView = Ember.View.extend({
     var tweet = this.get('tweet')
 
     if (!tweet.get('id')) {
+      tweet.save();
       Pajarraco.searchTweets.removeObject(tweet);
       Pajarraco.savedTweets.insertAt(0, tweet);
     }
