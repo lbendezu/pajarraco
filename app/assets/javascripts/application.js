@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ember
+//= require ember-dev
 //= require ember/pajarraco
 //= require_tree .
