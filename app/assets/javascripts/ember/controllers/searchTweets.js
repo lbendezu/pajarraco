@@ -19,7 +19,7 @@ Pajarraco.searchTweets = Ember.ArrayController.create({
             user_name:  item.from_user_name,
             user_image: item.profile_image_url
           }); 
-          self.insertAt(0, tweet);
+          self.unshiftObject(tweet);
         }
       }
     );

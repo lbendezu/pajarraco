@@ -52,7 +52,7 @@ Pajarraco.Tweet.all = function () {
           user_image: item.user_image
         });
 
-        tweets.pushObject(tweet);
+        tweets.unshiftObject(tweet);
       });
     },
     error: function (response, status, error) {
