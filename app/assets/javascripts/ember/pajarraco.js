@@ -5,4 +5,4 @@
 #= require_tree ./helpers
 #= require_tree ./templates
 
-window.Pajarraco = Ember.Application.create()
+window.Pajarraco = Ember.Application.create();
