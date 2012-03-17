@@ -1,4 +1,4 @@
-Pajarraco.tweetsController = Ember.ArrayController.create({
+Pajarraco.savedTweets = Ember.ArrayController.create({
   content: [],
   
   findAll: function () {

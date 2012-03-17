@@ -3,11 +3,21 @@
     <h1>Pajarraco</h1>
     <div class="row-fluid">
       <div class="span6 context">
-        Algo
+        <script type="text/x-handlebars">
+          <div class="query">
+            {{view Pajarraco.changeQueryView
+              placeholder="Search on Twitter"}}
+          </div>
+
+          {{view Pajarraco.TweetsView
+            contentBinding="Pajarraco.searchTweets"}}
+        </script>
       </div>
       <div class="span6 context">
+        <h2 class="title">My Saved Tweets:</h2>
         <script type="text/x-handlebars">
-          {{view Pajarraco.MainView}}
+          {{view Pajarraco.TweetsView
+            contentBinding="Pajarraco.savedTweets"}}
         </script>
       </div>
     </div>
@@ -16,6 +26,6 @@
 
 <script type="text/javascript">
   $(function () {
-    Pajarraco.tweetsController.findAll();
+    Pajarraco.savedTweets.findAll();
   });
 </script>

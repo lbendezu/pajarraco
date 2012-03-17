@@ -14,7 +14,7 @@ h1 {
   @include border-radius(3px);
 
   background: #BBD8E9;
-  margin-top: 30px;
+  margin: 30px;
   padding: 30px;
 }
 
@@ -24,6 +24,17 @@ h1 {
   background: #DCEAF4;
   line-height: 30px;
   margin-top: 20px;
+}
+
+.query {
+  margin: 10px;
+  text-align: center;
+}
+
+.title {
+  color: #666;
+  margin: 10px;
+  text-align: center;
 }
 
 .tweet {
