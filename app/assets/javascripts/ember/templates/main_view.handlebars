@@ -1,6 +1,14 @@
 {{#each Pajarraco.tweetsController}}
-  <ul>
-    <li>@{{user_nick}} - {{user_name}}</li>
-    <li>{{text}}</li>
-  </ul>   
+  <ul class="tweets">
+    <li class="tweet">
+      <img {{bindAttr src="user_image"}}>
+      <div class="user_info">
+        <h2>
+          {{twitter_url user_nick}}
+          <small>- {{user_name}}</small>
+        </h2>
+        <p>{{text}}</p>
+      </div>
+    </li>
+  </ul> 
 {{/each}}

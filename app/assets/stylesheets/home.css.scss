@@ -15,7 +15,7 @@ h1 {
 
   background: #BBD8E9;
   margin-top: 30px;
-  padding: 10px;
+  padding: 30px;
 }
 
 .context {
@@ -23,4 +23,26 @@ h1 {
 
   background: #DCEAF4;
   line-height: 30px;
+  margin-top: 20px;
+}
+
+.tweet {
+  .user_info {
+    display: inline-block;
+  }
+
+  img {
+    @include border-radius(5px);
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.tweets {
+  @include border-radius(3px);
+
+  background: white;
+  list-style-type: none;
+  margin: 4px;
+  padding: 10px;
 }
