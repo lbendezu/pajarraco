@@ -1,3 +1,5 @@
+Tweet.delete_all
+
 Tweet.create(
   text:       "nice talk @dbrady! #mwrc",
   user_nick:  "frodsan",
