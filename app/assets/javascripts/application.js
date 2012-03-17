@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require ember-dev
 //= require ember/pajarraco
 //= require_tree .
