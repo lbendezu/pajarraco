@@ -1,14 +1,15 @@
 {{#each content}}
   <ul class="tweets">
-    <li class="tweet">
-      <img {{bindAttr src="user_image"}}>
+    {{#view Pajarraco.TweetView
+       tweetBinding="this"}}
+      <img {{bindAttr src="tweet.user_image"}}>
       <div class="user_info">
         <h2>
-          {{twitter_url user_nick}}
-          <small>- {{user_name}}</small>
+          {{twitter_url tweet.user_nick}}
+          <small>- {{tweet.user_name}}</small>
         </h2>
-        <p>{{text}}</p>
+        <p>{{tweet.text}}</p>
       </div>
-    </li>
+    {{/view}}
   </ul> 
 {{/each}}
