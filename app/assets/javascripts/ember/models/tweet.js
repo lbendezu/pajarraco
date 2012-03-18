@@ -23,9 +23,10 @@ Pajarraco.Tweet = Ember.Object.extend({
       dataType: 'text',
       success: function (data, response) {
         data = $.trim(data);
+
         if (data) {
           data = $.parseJSON(data);
-          self.set('id', data['id']);
+          self.set('id', data['tweet']['id']);
         }
       },
       error: function (response, status, error) {
