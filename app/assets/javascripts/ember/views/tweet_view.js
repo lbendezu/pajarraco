@@ -10,10 +10,11 @@ Pajarraco.TweetView = Ember.View.extend({
     if (!tweet.get('id')) {
       tweet.save();
       Pajarraco.searchTweets.removeObject(tweet);
-      Pajarraco.savedTweets.insertAt(0, tweet);
+      Pajarraco.savedTweets.unshiftObject(tweet);
     } else {
       tweet.delete();
       Pajarraco.savedTweets.removeObject(tweet);
+      Pajarraco.searchTweets.unshiftObject(tweet);
     }
   }
 });
