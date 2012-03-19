@@ -1,11 +1,24 @@
 # Pajarraco
 
+**TODO: Introduction**
+
 * Ember: >= 0.9.4
 * Rails: >= 3.2
 
-Working on a Ember.js + Rails Guide
+## 1. Setting up the Application:
 
-Coming soon...
+**TODO:** 
+
+    rails new pajarraco && cd pajarraco
+
+Edit `Gemfile` to add the following gems:
+
+    gem "active_model_serializers", git: "git://github.com/josevalim/active_model_serializers.git"
+    gem "ember-rails", git: "http://github.com/emberjs/ember-rails"
+
+Run `bundle install`.
+
+**TODO:** why those gems?
 
 ## Ember App Strucutre:
 
