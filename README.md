@@ -22,7 +22,7 @@ Run `bundle install`.
 
 ## 2. Creating a Tweet Resource
 
-In this case of the tweets book application, you can generate a  
+In this case of the tweets book application, you can generate a
 Tweet resource. To do this, enter this command in your terminal:
 
     rails g resource Tweet text user_nick user_name user_image
@@ -53,14 +53,14 @@ Edit `app/controllers/tweets_controller.rb`: **TODO:** More explanation
       end
     end
 
-Run `rails s` and open <http://localhost:3000/tweets.json> with  
-the best web browser ever => C.H.R.O.M.E! (**TODO: not funny**).  
+Run `rails s` and open <http://localhost:3000/tweets.json> with
+the best web browser ever => C.H.R.O.M.E! (**TODO: not funny**).
 You will see the next error:
 
     undefined method `current_user' for #<TweetsController:blahblah>
 
-Serializers know about both a model and the `current_user`, so  
-you can customize serialization based upon whether a user is   
+Serializers know about both a model and the `current_user`, so
+you can customize serialization based upon whether a user is 
 authorized to see the content. For this demo, we don't need
 some kind of authentication, so just create an empty `current_user`
 method in `ApplicationController`:
@@ -72,7 +72,7 @@ method in `ApplicationController`:
       end
     end
 
-Open again: <http://localhost:3000/tweets.json> and you're  
+Open again: <http://localhost:3000/tweets.json> and you're
 gonna see: `{"tweets":[]}` JSON object.
 
 ## Ember App Strucutre:
