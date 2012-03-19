@@ -20,7 +20,7 @@ Run `bundle install`.
 
 **TODO:** why those gems?
 
-## 2. Creating a Resource
+## 2. Creating a Tweet Resource
 
 In this case of the tweets book application, you can generate a  
 Tweet resource. To do this, enter this command in your terminal:
@@ -54,7 +54,7 @@ Edit `app/controllers/tweets_controller.rb`: **TODO:** More explanation
     end
 
 Run `rails s` and open <http://localhost:3000/tweets.json> with  
-the best web browser ever => C.H.R.O.M.E! (**TODO: not funny**)
+the best web browser ever => C.H.R.O.M.E! (**TODO: not funny**).  
 You will see the next error:
 
     undefined method `current_user' for #<TweetsController:blahblah>
