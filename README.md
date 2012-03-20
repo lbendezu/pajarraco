@@ -120,7 +120,7 @@ as a new subclass of `Ember.Object`:
       text: '',
       user_nick: '',
       user_name: '',
-      user_image: '',
+      user_image: ''
     });
 
 **TODO:** Explain controller rails -> method all
@@ -150,6 +150,28 @@ as a new subclass of `Ember.Object`:
 
       return tweets;
     };
+
+Create saved tweets controller:
+
+    Pajarraco.savedTweets = Ember.ArrayController.create({
+      findAll: function () {
+        this.set('content', Pajarraco.Tweet.all());
+      }
+    });
+
+**TODO:** Content property implicity
+
+Create a view for tweets that renders an specific template 
+in `app/assets/javascripts/ember/views/tweets_view.js`:
+
+    Pajarraco.TweetsView = Ember.View.extend({
+      templateName: 'ember/templates/tweets'
+    });
+
+Now, create that template in `app/assets/javascripts/ember/templates/tweets.handlebars`:
+
+
+
 
 ## Ember App Structure:
 
