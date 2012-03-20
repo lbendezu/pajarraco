@@ -107,6 +107,50 @@ which is also an instance of `Ember.Application`. It is important that very Embe
 app creates an instance of `Ember.Application`, because it is responsible for
 routing browser events to your views.
 
+## 4. List of Saved Tweets 
+
+**TODO:** Better Title and Explanations
+
+First, you have to create a `Ember.Object` to represent Tweet model. Create
+`tweet.js` in `app/assets/javascripts/ember/models/` and define a Tweet object
+as a new subclass of `Ember.Object`:
+
+    Pajarraco.Tweet = Ember.Object.extend({
+      id: null,
+      text: '',
+      user_nick: '',
+      user_name: '',
+      user_image: '',
+    });
+
+**TODO:** Explain controller rails -> method all
+
+    Pajarraco.Tweet.all = function () {
+      var tweets = [], tweet;
+
+      $.ajax('/tweets.json', {
+        dataType: 'json',
+        success: function (data) {
+          data['tweets'].forEach(function (item) {
+            tweet = Pajarraco.Tweet.create({
+              id:         item.id,
+              text:       item.text,
+              user_nick:  item.user_nick,
+              user_name:  item.user_name,
+              user_image: item.user_image
+            });
+
+            tweets.unshiftObject(tweet);
+          });
+        },
+        error: function (response, status, error) {
+          console.error(status, error, response.responseText);
+        }
+      });
+
+      return tweets;
+    };
+
 ## Ember App Structure:
 
     app/assets/javascripts/ember
