@@ -75,6 +75,38 @@ method in `ApplicationController`:
 Open again: <http://localhost:3000/tweets.json> and you're
 gonna see: `{"tweets":[]}` JSON object.
 
+# 3. Burn your application:
+
+Use this generator to bootstrap your ember app:
+
+    rails g ember_rails:bootstrap
+
+You'll see the following directory structure under `app/assets/javascripts/ember`.
+
+    ember/
+       pajarraco.js.coffee
+       /models
+       /controllers
+       /views
+       /helpers
+       /templates
+
+Open `pajarraco.js.coffee` file:
+
+    #= require_self
+    #= require_tree ./models
+    #= require_tree ./controllers
+    #= require_tree ./views
+    #= require_tree ./helpers
+    #= require_tree ./templates
+
+    window.Pajarraco = Ember.Application.create()
+
+The last line creates a namespace for your ember application (called Pajarraco),
+which is also an instance of `Ember.Application`. It is important that very Ember
+app creates an instance of `Ember.Application`, because it is responsible for
+routing browser events to your views.
+
 ## Ember App Strucutre:
 
     app/assets/javascripts/ember
