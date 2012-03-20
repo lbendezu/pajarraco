@@ -1,5 +1,3 @@
 Pajarraco.TweetsView = Ember.View.extend({
-  templateName: 'ember/templates/tweets',
-
-  content: []
+  templateName: 'ember/templates/tweets'
 });
