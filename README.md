@@ -75,7 +75,7 @@ method in `ApplicationController`:
 Open again: <http://localhost:3000/tweets.json> and you're
 gonna see: `{"tweets":[]}` JSON object.
 
-# 3. Burn your application:
+## 3. Burn your application:
 
 Use this generator to bootstrap your ember app:
 
@@ -107,7 +107,7 @@ which is also an instance of `Ember.Application`. It is important that very Embe
 app creates an instance of `Ember.Application`, because it is responsible for
 routing browser events to your views.
 
-## Ember App Strucutre:
+## Ember App Structure:
 
     app/assets/javascripts/ember
       pajarraco.js
