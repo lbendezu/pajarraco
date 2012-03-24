@@ -74,3 +74,32 @@ Pajarraco.Tweet.all = function () {
 
   return tweets;
 };
+
+Pajarraco.Tweet.search = function (query) {
+  var self   = this,
+      tweet  = null,
+      item   = null,
+      tweets = [],
+      i, len;
+
+  $.getJSON(
+    'http://search.twitter.com/search.json?q=' + query + '&callback=?',
+    function (data) {
+      len = data.results.length;
+      for (i = 0; i < len; i++) {
+        item  = data.results[i];
+
+        tweet = Pajarraco.Tweet.create({
+          text:       item.text,
+          user_nick:  item.from_user,
+          user_name:  item.from_user_name,
+          user_image: item.profile_image_url
+        });
+
+        tweets.unshiftObject(tweet);
+      }
+    }
+  );
+
+  return tweets;
+};

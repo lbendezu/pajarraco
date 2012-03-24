@@ -3,8 +3,8 @@ Pajarraco.changeQueryView = Ember.TextField.extend({
     var value = this.get('value');
 
     if (value) {
-      Pajarraco.searchTweets.clear();
       Pajarraco.searchTweets.set('query', value);
+      Pajarraco.searchTweets.refresh();
     }
   }
 });
