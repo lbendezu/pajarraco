@@ -1,7 +1,7 @@
 {{#each content}}
   <ul class="tweets">
     {{#view Pajarraco.TweetView
-       tweetBinding="this"}}
+       tweetBinding="this" tagName="li" classNames="tweet"}}
       <img {{bindAttr src="tweet.user_image"}}>
       <div class="user_info">
         <h2>

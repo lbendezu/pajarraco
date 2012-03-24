@@ -1,7 +1,4 @@
 Pajarraco.TweetView = Ember.View.extend({
-  tagName: 'li',
-  classNames: ['tweet'],
-
   tweet: null,
 
   doubleClick: function () {
@@ -12,7 +9,7 @@ Pajarraco.TweetView = Ember.View.extend({
       Pajarraco.searchTweets.removeObject(tweet);
       Pajarraco.savedTweets.unshiftObject(tweet);
     } else {
-      tweet.delete();
+      tweet.destroy();
       Pajarraco.savedTweets.removeObject(tweet);
       Pajarraco.searchTweets.unshiftObject(tweet);
     }

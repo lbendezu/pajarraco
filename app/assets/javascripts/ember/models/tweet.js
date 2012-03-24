@@ -37,7 +37,7 @@ Pajarraco.Tweet = Ember.Object.extend({
     return self;
   },
 
-  delete: function () {
+  destroy: function () {
     var id = this.get('id');
     $.ajax('/tweets/' + id + '.json', {
       type: 'POST',
@@ -45,6 +45,7 @@ Pajarraco.Tweet = Ember.Object.extend({
       dataType: 'text'
     });
 
+    this.set('id', null);
     return this;
   } 
 });
