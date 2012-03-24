@@ -4,6 +4,10 @@ Pajarraco.Tweet = Ember.Object.extend({
   user_nick: '',
   user_name: '',
   user_image: '',
+  
+  twitter_user_nick: function () {
+    return '@' + this.get('user_nick');
+  }.property('user_nick'),
 
   attributes: function () {
     return {

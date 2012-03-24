@@ -1,8 +1,8 @@
 Handlebars.registerHelper('twittify', function (property) {
-  var text = Ember.getPath(this, property),
-      exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
-      linked = '';
+  var text = Ember.getPath(this, property);
   
-  linked = text.replace(exp, '<a href="$1" target="_blank">$1</a>');
-  return new Handlebars.SafeString(linked);
+  text = Pajarraco.TweetParser.parseUrl(text);
+  text = Pajarraco.TweetParser.parseUser(text);
+  text = Pajarraco.TweetParser.parseHashtag(text);
+  return new Handlebars.SafeString(text);
 });
