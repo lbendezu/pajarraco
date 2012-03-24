@@ -1,4 +1,4 @@
-Handlebars.registerHelper('linkify', function (property) {
+Handlebars.registerHelper('twittify', function (property) {
   var text = Ember.getPath(this, property),
       exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
       linked = '';
