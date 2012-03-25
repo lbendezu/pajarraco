@@ -1,5 +1,25 @@
 # Pajarraco
 
+## Ember App Structure:
+
+    app/assets/javascripts/ember
+      pajarraco.js
+      lib/
+        string.js
+      models/
+        tweet.js
+      controllers/
+        search_tweets_controller.js
+        saved_tweets_controller.js
+      views/
+        change_query_view.js
+        tweet_view.js
+        tweets_view.js
+      template/
+        tweets.handlebars
+      helpers/
+        twittify.js
+
 **TODO: Introduction**
 
 * Ember: >= 0.9.4
@@ -169,25 +189,3 @@ in `app/assets/javascripts/ember/views/tweets_view.js`:
     });
 
 Now, create that template in `app/assets/javascripts/ember/templates/tweets.handlebars`:
-
-
-
-
-## Ember App Structure:
-
-    app/assets/javascripts/ember
-      pajarraco.js
-      models/
-        tweet.js
-      controllers/
-        search_tweets_controller.js
-        saved_tweets_controller.js
-      views/
-        change_query_view.js
-        tweet_view.js
-        tweets_view.js
-      template/
-        tweets.handlebars
-      helpers/
-        linkify.js
-        twitter_url.js
