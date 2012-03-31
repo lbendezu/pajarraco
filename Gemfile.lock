@@ -1,17 +1,17 @@
 GIT
-  remote: git://github.com/josevalim/active_model_serializers.git
-  revision: 5f0bb6d1481478f8aea2111cc14ea286be0bfc95
-  specs:
-    active_model_serializers (0.1.0)
-      activemodel (~> 3.0)
-
-GIT
-  remote: http://github.com/emberjs/ember-rails
+  remote: git://github.com/emberjs/ember-rails.git
   revision: 1614e7dac6dcd83a68b4f5ea479d2fec7094d781
   specs:
     ember-rails (0.2.4)
       execjs (>= 1.2)
       railties (>= 3.0)
+
+GIT
+  remote: git://github.com/josevalim/active_model_serializers.git.git
+  revision: 5f0bb6d1481478f8aea2111cc14ea286be0bfc95
+  specs:
+    active_model_serializers (0.1.0)
+      activemodel (~> 3.0)
 
 GEM
   remote: https://rubygems.org/

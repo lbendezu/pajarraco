@@ -2,8 +2,8 @@ source "https://rubygems.org"
 
 gem "rails", "3.2.1"
 
-gem "active_model_serializers", git: "git://github.com/josevalim/active_model_serializers.git"
-gem "ember-rails", git: "http://github.com/emberjs/ember-rails"
+gem "active_model_serializers", github: "josevalim/active_model_serializers.git"
+gem "ember-rails", github: "emberjs/ember-rails"
 gem "twitter-bootstrap-rails"
 
 group :development do
