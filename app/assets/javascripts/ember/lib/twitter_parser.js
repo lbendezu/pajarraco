@@ -32,3 +32,26 @@ Pajarraco.TweetParser = function (text) {
     return this;
   }
 };
+
+Pajarraco.TweetSearch = Ember.Mixin.create({
+  searchTweets: function (query, callback) {
+    var tweets = [];
+
+    $.getJSON('http://search.twitter.com/search.json?q=' + query + '&callback=?',
+      function (data) {
+        var tweetObject, item,
+            i, len = data.results.length;
+
+        for (i = 0; i < len; i++) {
+          item = data.results[i];
+
+          tweetObject = callback(item);
+
+          tweets.unshiftObject(tweetObject);
+        }
+      }
+    );
+
+    return tweets;
+  }
+});
