@@ -1,5 +1,4 @@
 Pajarraco.TweetView = Ember.View.extend({
-  tweet: null,
 
   doubleClick: function () {
     var tweet = this.get('tweet');
@@ -10,4 +9,5 @@ Pajarraco.TweetView = Ember.View.extend({
       Pajarraco.savedTweets.destroyTweet(tweet);
     }
   }
+
 });
