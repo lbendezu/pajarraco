@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require lib/ember
+//= require lib/ember-data
 //= require ember/pajarraco
