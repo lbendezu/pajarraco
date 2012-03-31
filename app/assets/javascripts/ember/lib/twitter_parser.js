@@ -1,4 +1,6 @@
-var TwitterParser = function (text) {
+var Twitter = {};
+
+Twitter.Parser = function (text) {
   this.text = text,
 
   this.getText = function () {
