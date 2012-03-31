@@ -10,5 +10,9 @@ Pajarraco = Ember.Application.create({
   store: DS.Store.create({
     adapter:  DS.RESTAdapter.create({ bulkCommit: false }),
     revision: 4
-  })
+  }),
+
+  ready: function () {
+    Pajarraco.savedTweets.loadTweets();
+  }
 });
