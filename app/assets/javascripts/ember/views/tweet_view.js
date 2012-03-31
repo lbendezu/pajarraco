@@ -4,9 +4,9 @@ Pajarraco.TweetView = Ember.View.extend({
     var tweet = this.get('tweet');
 
     if (!tweet.get('id')) {
-      Pajarraco.savedTweets.newTweet(tweet);
+      Pajarraco.savedTweetsController.newTweet(tweet);
     } else {
-      Pajarraco.savedTweets.destroyTweet(tweet);
+      Pajarraco.savedTweetsController.destroyTweet(tweet);
     }
   }
 

@@ -1,4 +1,5 @@
-Pajarraco.savedTweets = Ember.ArrayController.create({
+Pajarraco.savedTweetsController = Ember.ArrayController.create({
+
   loadTweets: function () {
     var content = Pajarraco.Tweet.find();
     this.set('content', content);
@@ -13,4 +14,5 @@ Pajarraco.savedTweets = Ember.ArrayController.create({
     tweet.deleteRecord();
     Pajarraco.store.commit();
   }
+
 });

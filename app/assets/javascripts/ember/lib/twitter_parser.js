@@ -1,6 +1,4 @@
-var Twitter = {};
-
-Twitter.Parser = function (text) {
+Pajarraco.TweetParser = function (text) {
   this.text = text,
 
   this.getText = function () {

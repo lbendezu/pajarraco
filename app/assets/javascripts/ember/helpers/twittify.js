@@ -1,6 +1,6 @@
 Handlebars.registerHelper('twittify', function (property) {
   var text = Ember.getPath(this, property),
-      twitterParser = new Twitter.Parser(text);
+      twitterParser = new Pajarraco.TweetParser(text);
 
   return new Handlebars.SafeString(
     twitterParser.parseURL()

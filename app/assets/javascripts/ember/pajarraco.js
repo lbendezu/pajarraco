@@ -13,6 +13,6 @@ Pajarraco = Ember.Application.create({
   }),
 
   ready: function () {
-    Pajarraco.savedTweets.loadTweets();
+    Pajarraco.savedTweetsController.loadTweets();
   }
 });
