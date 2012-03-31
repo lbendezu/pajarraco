@@ -1,9 +1,12 @@
 Handlebars.registerHelper('twittify', function (property) {
   var text = Ember.getPath(this, property);
   
-  text = text.parseURL()
-             .parseUsername()
-             .parseHashtag();
+  var twitterParser = new TwitterParser(text);
 
-  return new Handlebars.SafeString(text);
+  return new Handlebars.SafeString(
+    twitterParser.parseURL()
+                 .parseUsername()
+                 .parseHashtag()
+                 .getText()
+  );
 });
