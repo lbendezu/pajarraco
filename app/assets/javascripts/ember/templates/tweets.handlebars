@@ -2,11 +2,11 @@
   <ul class="tweets">
     {{#view Pajarraco.TweetView
        tweetBinding="this" tagName="li" classNames="tweet"}}
-      <img {{bindAttr src="tweet.user_image"}}>
+      <img {{bindAttr src="tweet.userImage"}}>
       <div class="user_info">
         <h2>
-          {{twittify tweet.twitter_user_nick}}
-          <small>- {{tweet.user_name}}</small>
+          {{twittify tweet.twitterUserNick}}
+          <small>- {{tweet.userName}}</small>
         </h2>
         <p>{{twittify tweet.text}}</p>
       </div>

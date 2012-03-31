@@ -1,84 +1,13 @@
-Pajarraco.Tweet = Ember.Object.extend({
-  id: null,
-  text: '',
-  user_nick: '',
-  user_name: '',
-  user_image: '',
-  
-  twitter_user_nick: function () {
-    return '@' + this.get('user_nick');
-  }.property('user_nick'),
+Pajarraco.Tweet = DS.Model.extend({
+  text:      DS.attr('string'),
+  userNick:  DS.attr('string'),
+  userName:  DS.attr('string'),
+  userImage: DS.attr('string'),
 
-  attributes: function () {
-    return {
-      text: this.get('text'),
-      user_nick: this.get('user_nick'),
-      user_name: this.get('user_name'),
-      user_image: this.get('user_image')
-    }
-  }.property('text', 'user_nick', 'user_name', 'user_image'),
-
-  save: function () {
-    var self = this;
-
-    $.ajax('/tweets.json', {
-      type: 'POST',
-      data: { tweet: self.get('attributes'), _method: 'POST' },
-      dataType: 'text',
-      success: function (data, response) {
-        data = $.trim(data);
-
-        if (data) {
-          data = $.parseJSON(data);
-          self.set('id', data['tweet']['id']);
-        }
-      },
-      error: function (response, status, error) {
-        console.error(status, error, response.responseText);
-      }
-    });
-
-    return self;
-  },
-
-  destroy: function () {
-    var id = this.get('id');
-    $.ajax('/tweets/' + id + '.json', {
-      type: 'POST',
-      data: { _method: 'DELETE' },
-      dataType: 'text'
-    });
-
-    this.set('id', null);
-    return this;
-  } 
+  twitterUserNick: function () {
+    return '@' + this.get('userNick');
+  }.property('userNick').cacheable()
 });
-
-Pajarraco.Tweet.all = function () {
-  var tweets = [], tweet;
-
-  $.ajax('/tweets.json', {
-    dataType: 'json',
-    success: function (data) {
-      data['tweets'].forEach(function (item) {
-        tweet = Pajarraco.Tweet.create({
-          id:         item.id,
-          text:       item.text,
-          user_nick:  item.user_nick,
-          user_name:  item.user_name,
-          user_image: item.user_image
-        });
-
-        tweets.unshiftObject(tweet);
-      });
-    },
-    error: function (response, status, error) {
-      console.error(status, error, response.responseText);
-    }
-  });
-
-  return tweets;
-};
 
 Pajarraco.Tweet.search = function (query) {
   var self   = this,
@@ -94,11 +23,11 @@ Pajarraco.Tweet.search = function (query) {
       for (i = 0; i < len; i++) {
         item  = data.results[i];
 
-        tweet = Pajarraco.Tweet.create({
-          text:       item.text,
-          user_nick:  item.from_user,
-          user_name:  item.from_user_name,
-          user_image: item.profile_image_url
+        tweet = Pajarraco.Tweet._create({
+          text:      item.text,
+          userNick:  item.from_user,
+          userName:  item.from_user_name,
+          userImage: item.profile_image_url
         });
 
         tweets.unshiftObject(tweet);

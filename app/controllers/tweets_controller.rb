@@ -7,8 +7,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(params[:tweet])
-    @tweet.save
+    @tweet = Tweet.create(params[:tweet])
 
     respond_with @tweet
   end

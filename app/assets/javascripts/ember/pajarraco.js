@@ -6,4 +6,9 @@
 #= require_tree ./helpers
 #= require_tree ./templates
 
-window.Pajarraco = Ember.Application.create();
+Pajarraco = Ember.Application.create({
+  store: DS.Store.create({
+    adapter:  DS.RESTAdapter.create({ bulkCommit: false }),
+    revision: 4
+  })
+});

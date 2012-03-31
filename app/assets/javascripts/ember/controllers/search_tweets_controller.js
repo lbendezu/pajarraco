@@ -1,5 +1,8 @@
 Pajarraco.searchTweets = Ember.ArrayController.create({
+  content: [],
+
   refresh: function (query) {
-    this.set('content', Pajarraco.Tweet.search(query));
+    var content = Pajarraco.Tweet.search(query);
+    this.set('content', content);
   }
 });

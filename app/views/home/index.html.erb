@@ -16,6 +16,7 @@
             contentBinding="Pajarraco.searchTweets"}}
         </script>
       </div>
+
       <div class="span6 context">
         <h2 class="title">My Saved Tweets:</h2>
         <script type="text/x-handlebars">
@@ -29,6 +30,6 @@
 
 <script type="text/javascript">
   $(function () {
-    Pajarraco.savedTweets.findAll();
+    Pajarraco.savedTweets.loadTweets();
   });
 </script>
